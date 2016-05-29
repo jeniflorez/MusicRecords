@@ -163,7 +163,10 @@ ul.navbar-nav {
 .form-top-left {
 	float: left;
 	width: 75%;
-	padding-top: 68px;
+	padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 10px;
 }
 
 .form-top-left h3 { margin-top: 0; }
@@ -176,6 +179,53 @@ ul.navbar-nav {
 	color: #ddd;
 	line-height: 100px;
 	text-align: right;
+}
+.form-top-size{
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+  margin-right: -130px;
+  line-height: 50px;
+  padding-top: 5px;
+  height: 44px;
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+}
+
+.form-top-right-dia {
+  display: block;
+  float: left;
+  line-height: 70px;
+  margin-left: 183px;
+  margin-right: -1px;
+  margin-top: -45px;
+  margin-bottom: -20px;
+}
+
+.form-top-right-mes{
+  display: block;
+  float: left;
+  line-height: 70px;
+  margin-left: 70px;
+  margin-right: -1px;
+  margin-top: -45px;
+    margin-bottom: -20px;
+}
+
+.form-top-right-anio{
+  display: block;
+  float: left;
+  line-height: 70px;
+  margin-left: 125px;
+  margin-right: -1px;
+  margin-top: -45px;
+    margin-bottom: -20px;
 }
 
 .form-bottom {

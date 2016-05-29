@@ -68,39 +68,48 @@
                             <h1><img src="credentials-preferences.png" alt="" width="" height="100" align=bottom><strong>Solicitar disco:</strong><br/></h1>
                             <a href="../Home/Home.html" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>
                         </div>
+
                     </div>
+                        <div class="col-sm-5 form-box">
+                            <div class="form-bottom">
+			                    <form role="form" action="Reg.php" method="post" class="registration-form">
+                            <div class="form-group">
+                              	<div class="form-top-left">
+                                    <h3>Nombre disco: </h3>
+                                </div>
+                                <div class="form-top-right">
+                                 <input type="text" name="txtNomDisco"  required/><br/>
+                                </div>
+                                <div class="form-top-left">
+                                    <h3>Artista: </h3>
+                                </div>
+                                <div class="form-top-right">
+                                 <input type="text" name="txtArtista"  required/><br/>
+                                </div>
+                                <div class="form-top-left">
+                                    <h3>Año: </h3>
+                                </div>
+                                <div class="form-top-right">
+                                 <input type="text" name="txtAnio"  required/><br/>
+                                </div>
 
-                    <div class="form-bottom  bordes-fomulario" style = "margin:auto; width: 450px;">
-                        <i class="fa fa-pencil"></i>
-                    <form role="form" action="Reg.php" method="post" class="registration-form">
-                      <div class="form-group  bordes-fomulario">
-                           <label class="sr-only" for="Usuario">Nombre Disco:</label>
-                           Nombre Disco:<input type="text" name="txtDisco"  class=" form-control"  >
-                      </div>
-                      <div class="form-group  bordes-fomulario">
-                         <label class="sr-only" for="Contraseña">Artista</label>
-                         Artista <input type="text" name="txtArtista"  class=" form-control"  >
-                      </div>
-                      <div class="form-group  bordes-fomulario">
-                           <label class="sr-only" for="Usuario">Anio:</label>
-                           Anio:<input type="text" name="txtAnio"  class=" form-control"  >
-                      </div>
-                      <div class="form-group  bordes-fomulario">
-                           <label class="sr-only" for="Usuario">Cédula:</label>
-                           Cédula:<input type="text" name="txtCed"  class=" form-control"  >
-                      </div>
+			                    	<div class="form-group">
 
-                      <button type="submit" class="btn" style="margin-left: 253px;margin-top: 10px;">Solicitar</button>
-                  </form>
-                </div>
+                              <div class="form-group">
+                                <label class="sr-only" for="form-email">Pais</label>
+                                <input style="height:0px; border:solid transparent 0px" type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                              </div>
 
+			                        <button type="submit" class="btn" style="float: right">Solicitar</button>
 
-
+			                    </form>
 		                    </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+        </div>
 
 
         <!-- Javascript -->

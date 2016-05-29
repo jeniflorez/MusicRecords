@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../logo.png">
+    <link rel="icon" href="../favicon.png">
 
     <title>MUSIC RECORDS</title>
 
@@ -153,106 +153,51 @@
         <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
         <a href="#about"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>
         <a href="#about"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>
-        <h2 style= "font-size=40px; color: #fff;">Géneros</h2>
-        <li><a href="#contact"><p class="lead" style ="color: rgba(175, 167, 167, 0.71);">Jazz</p>
-        <li><a href="#contact"><p class="lead"  style ="color: rgba(175, 167, 167, 0.71);">K-Pop</p>
-        <li><a href="#contact"><p class="lead"  style ="color: rgba(175, 167, 167, 0.71);">Pop</p>
-        <li><a href="#contact"><p class="lead"  style ="color: rgba(175, 167, 167, 0.71);">Reggaeton</p>
-        <li><a href="#contact"><p class="lead"  style ="color: rgba(175, 167, 167, 0.71);">Rock</p>
-        <li><a href="#contact"><p class="lead"  style ="color: rgba(175, 167, 167, 0.71);">Salsa</p>
-        <div class="col-lg-4">
-			<a name="paises" id="pa"></a>
-          <img class="img-circle" src="../src/alemania.jpg" alt="Generic placeholder image" width="140" height="140">
 
-          <h2>Alemania</h2>
-		  <p>Disfruta de todos los estudios que Alemania tiene para ti, dirígete a su sección para saber mas.</p>
-          <p><a class="btn btn-default" href="#alemania" role="button">Ver Alemania&raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="../src/espana-bandera.jpg" alt="Generic placeholder image" width="140" height="140">
-          <h2>España</h2>
-          <p>Lider en el entretenimiento, averigua más sobre ellos.</p>
-          <p><a class="btn btn-default" href="#espana" role="button">Ver España &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="../src/holanda-bandera.jpg" alt="Generic placeholder image" width="140" height="140">
-          <h2>Holanda</h2>
-          <p>Conocidos por su ambiente tranquilo y comportamiento pacifista. Conoce a Holanda.</p>
-          <p><a class="btn btn-default" href="#holanda" role="button">Ver Holanda &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        <?php
+        $Codigo = $_GET['Codigo'];
+        $Imagen = $_GET['Imagen'];
+        $Nombre = $_GET['Nombre'];
+        $Artista = $_GET['Artista'];
+        $Valor = $_GET['Valor'];
+        $Fecha = date('Y-m-d');
+        $ValorVenta = 0;
+        $Cantidad = "";
+        $Var = '<div class="col-lg-4" style = "margin-left:410px;">';
+        $Var.= '<a name="paises" id="pa"></a>';
+        $Var.= '<img class="img-circle" src="../../RegistrarDisco/files/Imagenes/'.$Imagen.'" alt="Generic placeholder image" width="140" height="140">';
+        $Var.= '<h2>Nombre Disco :</h2><p>'.$Nombre.'</p>';
+        $Var.= '<h2>Nombre Artista :</h2><p>'.$Artista.'</p>';
+        $Var.= '<div id= "Cantidad">';
+        $Var.= '<h2>Cantidad :</h2><select name="txtCant" required style="margin-left: 0px;height: 35px;margin-bottom: 10px;margin-top: -10px;">';
+        $Var.= '<option value="1" selected="selected">1</option>';
+        $Var.= '<option value="2">2</option>';
+        $Var.= '<option value="3">3</option>';
+        $Var.= '<option value="4">4</option>';
+        $Var.= '<option value="5">5</option>';
+        $Var.= '<option value="6">6</option>';
+        $Var.= '<option value="7">7</option>';
+        $Var.= '<option value="8">8</option>';
+        $Var.= '<option value="9">9</option>';
+        $Var.= '<option value="10">10</option>';
+        $Var.= '</select>';
+        $Var.= '</div>';
+        print $ValorVenta;
+        $Var.= '<p><a class="btn btn-default" href="RCompra.php?Fecha='.$Fecha.'&Valor='.$Valor.'&Cantidad=txtCant.value&Codigo='.$Codigo.'" role="button">Realizar Compra&raquo;</a></p>';
+        $Var.= '</div><!-- /.col-lg-4 -->';
+        print $Var;
+
+
+
+      ?>
+
+
       </div><!-- /.row -->
 
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
-	  <a name="alemania" id="al"></a>
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Alemania es robótica. <span class="text-muted">Aprende todo acerca de circuitos.</span></h2>
-          <p class="lead">Alemania trae consigo cursos de maestría y doctorado para que adquieras todos los conocimientos necesarios en la robótica. Además visitarás la hermosa ciudad de Berlín, conocerás su cultura y tendrás la fortuna de probar su tan famosa cerveza. Elige una de las opciones para inscribirte.</p>
-			<form action="accion_combobox.php">
-				<select name="cars">
-					<option value="marobo">Maestría en Robótica</option>
-					<option value="masis">Maestría en sistematización</option>
-					<option value="maia">Maestría en Inteligencia Artificial</option>
-					<option value="docrobo">Doctorado en Robótica</option>
-					<option value="doccom">Doctorado en Componentes Electrónicos</option>
-					<option value="doccir">Doctorado en Circuitos y Conexiones</option>
-				</select>
-				<br><br>
-				<input type="submit">
-			</form>
-		</div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="../src/estudiantes.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
 
-      <hr class="featurette-divider">
-	  <a name="espana" id="es"></a>
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">España contigo <span class="text-muted">El entretenimiento es su especialidad</span></h2>
-          <p class="lead">Ahora podrás visitar la ciudad del flamenco y el romanticismo. Ven a conocer sus hermosas calles y disfruta de los clásicos en el fútbol; al mismo tiempo conoce todo acerca del entretenimiento, vuélvete un experto en la multimedia. Elige una de las opciones para inscribirte.</p>
-		  <form action="accion_combobox.php">
-				<select name="cars">
-					<option value="mamul">Maestría en Multimedia</option>
-					<option value="macine">Maestría en Cine </option>
-					<option value="docvideo">Doctorado en Diseño de Videojuegos</option>
-					<option value="docguion">Doctorado en Guión e Historia</option>
-					<option value="docima">Doctorado en Alteración de Imagenes</option>
-					<option value="docplat">Doctorado en Plataformas de edición</option>
-				</select>
-				<br><br>
-				<input type="submit">
-			</form>
-		</div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="../src/cine.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-	  <a name="holanda" id="hol"></a>
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">La bella Holanda <span class="text-muted">Ahora conocerás todo de las personas.</span></h2>
-          <p class="lead">No solo vas a visitar uno de los paises mas hermosos, verás la gran cultura que tienen y conocerás sus elegantes tradiciones. En Holanda prepárate para conocer todo acerca del comportamiento humano, se testigo de los avances en las disciplinas sociales y relaciónate con el humanismo. Elige una de las opciones para inscribirte.</p>
-          <form action="accion_combobox.php">
-				<select name="cars">
-					<option value="docguion">Doctorado en Psicoanálisis</option>
-					<option value="docima">Doctorado en Poblaciones Estratificadas</option>
-					<option value="docplat">Doctorado en Relaciones Públicas Internacionales</option>
-				</select>
-				<br><br>
-				<input type="submit">
-			</form>
-		</div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="../src/holanda-ciudad.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
 
       <hr class="featurette-divider">
 
