@@ -2,20 +2,20 @@
 
 <?php
 /* @var $_POST type */
-$nombre= $_POST["txtEmail"];
+$nombre= $_POST["txtNomUsuario"];
 $pass= $_POST["txtContrasenia"];
-/*La busqueda en la base de datos se realiza de este modo para evitar las inyecciones sql*/
-$query=("SELECT email,contrasena FROM `clientes` "
-             . "WHERE email='".$nombre."' and "
-             . "`contrasena`='".$pass."'");
 
-$rs= mysqli_query($Conexion ,$query);
-/*$row=mysqli_fetch_object($rs);*/
-$nr = mysqli_num_rows($rs);
-if($nr == 1){
-   echo "Ingresado exitosamente";
-}
-else if($nr == 0) {
-   echo "No ingreso";
-}
+    $sql = "SELECT * FROM usuarios WHERE nombre='".$nombre."' and clave='".$pass."'";
+    $result = mysqli_query($Conexion,$sql);
+    $nr = mysqli_num_rows($result);
+    if($nr == 1){
+       $fila = mysqli_fetch_assoc($result);
+       $Cod_cliente = $fila['codigo'];
+
+       print '<a href="../Catalogo/inicio/Catalogo.php?codigo='.$Cod_cliente.'">Enlace a página de destino</a>';
+       echo "Ingresado exitosamente";
+    }
+    else if($nr == 0) {
+    echo "No estas registrado";
+    }
 ?>

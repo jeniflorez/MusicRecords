@@ -50,10 +50,36 @@
                 <li class="active"><a href="Catalogo.html">Catálogo</a></li>
                 <li><a href="../../Solicitar/Solicitud.html">Solicitar Disco</a></li>
                 <li><a href="../../RegistrarDisco/RegDisco.html">Venta Disco</a></li>
-				<form class="navbar-form navbar-right">
+                <?php
+                    require_once('Conexion.php');
+
+                    $Cod_cliente=$_GET['codigo'];
+                    if ($Cod_cliente==1){
+                        $Usuario="Administrador";
+                    }else{
+                      $sql = "SELECT nombre FROM usuarios WHERE codigo='$Cod_cliente'";
+                      $result = mysqli_query($Conexion,$sql);
+                      $fila = mysqli_fetch_assoc($result);
+                      $email = $fila['nombre'];
+                      $sql = "SELECT nombre,apellidos FROM clientes WHERE email='$email'";
+                      $result2 = mysqli_query($Conexion,$sql);
+                      $fila = mysqli_fetch_assoc($result2);
+                      $Nom_cliente=$fila['nombre'].' '.$fila['apellidos'];
+                      $Usuario=$Nom_cliente;
+                    }
+                    $html.='<ul class="nav">';
+                    $html.='<li><a href="" style="margin-top: -48px; margin-left: 604px;">Ingresado como '.$Usuario.'</a>';
+                    $html.='<ul><li><a href="" style="margin-left:665px;width: 84px;">Perfil</a></li>';
+                    $html.='<li><a href="" style="margin-left: 665px;width: 84px;">Salir</a></li>';
+                    $html.='</ul></li></ul>';
+                    print $html;
+
+
+                 ?>
+				<!--<form class="navbar-form navbar-right">
 					<button type="button" class="btn btn-success" onclick = "location='../../Login/Ingresar.html'" style="margin-left: 389px;">Ingresar</button>
           <button type="button" class="btn btn-success" onclick = "location='../../Registrar/Registrar.html'">Registrar</button>
-				</form>
+				</form>-->
               </ul>
             </div>
           </div>

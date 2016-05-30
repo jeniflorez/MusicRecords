@@ -72,7 +72,7 @@
                     </div>
                         <div class="col-sm-5 form-box">
                             <div class="form-bottom">
-			                    <form name="formulario" action="solicitar.php" method="post" style="margin-left: 57px;">
+			                    <form name="formulario" action="" onSubmit="enviarDatos(); return false" style="margin-left: 57px;">
                             <div class="form-group  bordes-fomulario">
                             Nombre disco<input type="text" name="txtNomDisco"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
                             </div>
@@ -85,6 +85,10 @@
                             <div class="form-group  bordes-fomulario">
                             Email<input type="text" name="txtEmail"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
                             </div>
+
+                            <div class="form-group  bordes-fomulario">
+                            Mensaje<input type="text" id = "Mensaje" name="Mensaje"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
+                            </div>
                             <button type="submit" class="btn" style="margin-left: 388px;">Solicitar</button>
 			                    </form>
 		                    </div>
@@ -94,6 +98,64 @@
             </div>
 
         </div>
+
+
+        <script type="text/javascript">
+
+            	function objetoAjax(){
+            		var xmlhttp = false;
+            		try {
+            			xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            		} catch (e) {
+
+            			try {
+            				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            			} catch (E) {
+            				xmlhttp = false; }
+            		}
+
+            		if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+            		  xmlhttp = new XMLHttpRequest();
+            		}
+            		return xmlhttp;
+            	}
+              function enviarDatos(){
+
+                //Recogemos los valores introducimos en los campos de texto
+        		NomDisco = document.formulario.txtNomDisco.value;
+        		Artista = document.formulario.txtArtista.value;
+            Ano = document.formulario.txtAño.value;
+        		Email = document.formulario.txtEmail.value;
+
+                 //Aquí será donde se mostrará el resultado
+        		Mensaje = document.getElementById('Mensaje');
+
+        		//instanciamos el objetoAjax
+        		ajax = objetoAjax();
+
+        		//Abrimos una conexión AJAX pasando como parámetros el método de envío, y el archivo que realizará las operaciones deseadas
+        		ajax.open("POST", "solicitar.php", true);
+
+        		//cuando el objeto XMLHttpRequest cambia de estado, la función se inicia
+        		ajax.onreadystatechange = function() {
+
+                     //Cuando se completa la petición, mostrará los resultados
+        			if (ajax.readyState == 4){
+
+        				//El método responseText() contiene el texto de nuestro 'consultar.php'. Por ejemplo, cualquier texto que mostremos por un 'echo'
+        				Mensaje.value = (ajax.responseText)
+        			}
+        		}
+
+        		//Llamamos al método setRequestHeader indicando que los datos a enviarse están codificados como un formulario.
+        		ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+        		//enviamos las variables a 'consulta.php'
+        		ajax.send("&NomDisco="+NomDisco+"&Artista="+Artista+"&Ano="+Ano+"&Email="+Email)
+
+        }
+
+        </script>
 
 
         <!-- Javascript -->
