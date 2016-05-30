@@ -48,9 +48,17 @@
               <ul class="nav navbar-nav">
                 <li><a href="../Home/Home.htlm">Home</a></li>
                 <li class="active"><a href="#">Perfil</a></li>
-                <li><a href="MisCompras.php">Mis compras</a></li>
-                <li><a href="MisVentas.php">Mis ventas</a></li>
-                <li><a href="MisSolicitudes.php">Mis Solicitudes</a></li>
+                <?php
+                  $Cod_cliente=$_GET['codigo'];
+                  $html='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
+                  $html='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
+                  $html='<li><a href="MisSolicitudes.php?codigo='.$Cod_cliente.'">Mis Solicitudes</a></li>';
+                  print $html;
+                 ?>
+
+
+
+
 				<!--<form class="navbar-form navbar-right">
 					<div class="form-group">
 						<input type="text" placeholder="Correo" class="form-control">
@@ -131,9 +139,9 @@
             <?php
               require_once('Conexion.php');
               //Obtener valores del formulario
-              $Cod_cliente = $_POST['txtCodcliente'];
-
-                  $sql = "SELECT * FROM clientes WHERE codcli='1'";
+              $Cod_cliente = $_GET['codigo'];
+              print '<h1>'.$Cod_cliente.'</h1>';
+                  $sql = "SELECT * FROM clientes WHERE codcli='.$Cod_cliente.'";
                   $result = mysqli_query($Conexion,$sql);
                     while ($fila = mysqli_fetch_assoc($result)){
                         $info='<h3>Nombre : '.$fila['nombre'].' '.$fila['apellidos'].'</h3><br/>';

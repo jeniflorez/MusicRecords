@@ -47,10 +47,18 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="../Home/Home.html">Home</a></li>
-                <li><a href="Perfil.php">Perfil</a></li>
-                <li><a href="MisCompras.php">Mis compras</a></li>
-                <li class="active"><a href="#">Mis ventas</a></li>
-                <li><a href="MisSolicitudes.php">Mis Solicitudes</a></li>
+                <?php
+                  $Cod_cliente=$_GET['codigo'];
+                  $html='<li><a href="Perfil.php?codigo='.$Cod_cliente.'">Perfil</a></li>';
+                  $html='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
+                  $html='<li class="active"><a href="#">Mis ventas</a></li>';
+                  $html='<li><a href="MisSolicitudes.php?codigo='.$Cod_cliente.'">Mis Solicitudes</a></li>';
+                  print $html;
+                 ?>
+
+
+
+
 				<!--<form class="navbar-form navbar-right">
 					<div class="form-group">
 						<input type="text" placeholder="Correo" class="form-control">

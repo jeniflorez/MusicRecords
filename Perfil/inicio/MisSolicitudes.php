@@ -47,10 +47,15 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="../Home/Home.html">Home</a></li>
-                <li><a href="Perfil.php">Perfil</a></li>
-                <li><a href="MisCompras">Mis compras</a></li>
-                <li><a href="MisVentas">Mis ventas</a></li>
-                <li class="active"><a href="#">Mis Solicitudes</a></li>
+                <?php
+                  $Cod_cliente=$_GET['codigo'];
+                  $html='<li><a href="Perfil.php?codigo='.$Cod_cliente.'">Perfil</a></li>';
+                  $html='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
+                  $html='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
+                  $html='<li class="active"><a href="#">Mis Solicitudes</a></li>';
+                  print $html;
+                 ?>
+
 				<!--<form class="navbar-form navbar-right">
 					<div class="form-group">
 						<input type="text" placeholder="Correo" class="form-control">
@@ -132,7 +137,8 @@
    						<?php
    							require_once('Conexion.php');
 
-                    $sql = "SELECT * FROM solicitud WHERE cod_cliente='1'";
+                    $Cod_cliente = $_GET['codigo'];
+                    $sql = "SELECT * FROM solicitud WHERE cod_cliente='.$Cod_cliente.'";
                     $result = mysqli_query($Conexion,$sql);
    											while ($fila = mysqli_fetch_assoc($result)) {
                               $estadoSolicitud=$fila1['estado_sol'];
