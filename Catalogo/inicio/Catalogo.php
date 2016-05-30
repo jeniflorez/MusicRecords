@@ -26,13 +26,65 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+        <style type="text/css">
+
+      * {
+        margin:0px;
+        padding:0px;
+      }
+
+      #header {
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      ul, ol {
+        list-style:none;
+      }
+
+      .nav > li {
+        float:left;
+      }
+
+      .nav li a {
+        background-color:#211F1F;
+        color:#fff;
+        text-decoration:none;
+        padding:10px 12px;
+        display:block;
+      }
+
+      .nav li a:hover {
+        background-color:#434343;
+      }
+
+      .nav li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+      }
+
+      .nav li:hover > ul {
+        display:block;
+      }
+
+      .nav li ul li {
+        position:relative;
+      }
+
+      .nav li ul li ul {
+        right:-140px;
+        top:0px;
+      }
+
+    </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -42,18 +94,44 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" >Music Records</a>
+              <a class="navbar-brand" style="margin-top: -4px;">Music Records</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav" style="margin-top: 1px">
                 <li><a href="../../Home/Home.html">Home</a></li>
                 <li class="active"><a href="Catalogo.html">Catálogo</a></li>
                 <li><a href="../../Solicitar/Solicitud.html">Solicitar Disco</a></li>
                 <li><a href="../../RegistrarDisco/RegDisco.html">Venta Disco</a></li>
-				<form class="navbar-form navbar-right">
-					<button type="button" class="btn btn-success" onclick = "location='../../Login/Ingresar.html'" style="margin-left: 389px;">Ingresar</button>
+                <?php
+                    require_once('Conexion.php');
+
+                    $Cod_cliente=$_GET['codigo'];
+                    if ($Cod_cliente==1){
+                        $Usuario="Administrador";
+                    }else{
+                      $sql = "SELECT nombre FROM usuarios WHERE codigo='$Cod_cliente'";
+                      $result = mysqli_query($Conexion,$sql);
+                      $fila = mysqli_fetch_assoc($result);
+                      $email = $fila['nombre'];
+                      $sql = "SELECT nombre,apellidos FROM clientes WHERE email='$email'";
+                      $result2 = mysqli_query($Conexion,$sql);
+                      $fila = mysqli_fetch_assoc($result2);
+                      $Nom_cliente=$fila['nombre'].' '.$fila['apellidos'];
+                      $Usuario=$Nom_cliente;
+                    }
+                    $html.='<ul class="nav">';
+                    $html.='<li><a href="" style="margin-top: -48px; margin-left: 604px;">Ingresado como '.$Usuario.'</a>';
+                    $html.='<ul><li><a href="" style="margin-left:665px;width: 84px;">Perfil</a></li>';
+                    $html.='<li><a href="" style="margin-left: 665px;width: 84px;">Salir</a></li>';
+                    $html.='</ul></li></ul>';
+                    print $html;
+
+
+                 ?>
+
+					<!--<button type="button" class="btn btn-success" onclick = "location='../../Login/Ingresar.html'" style="margin-left: 389px;">Ingresar</button>
           <button type="button" class="btn btn-success" onclick = "location='../../Registrar/Registrar.html'">Registrar</button>
-				</form>
+				</form>-->
               </ul>
             </div>
           </div>
