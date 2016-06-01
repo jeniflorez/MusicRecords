@@ -7,9 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../icono.ico">
+    <link rel="icon" href="../src/favicon.png">
 
-    <title>PERFIL</title>
+    <title>PERFIL ADMINISTRADOR</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,60 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+
+        <style type="text/css">
+
+      * {
+        margin:0px;
+        padding:0px;
+      }
+
+      #header {
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      ul, ol {
+        list-style:none;
+      }
+
+      .nav > li {
+        float:left;
+      }
+
+      .nav li a {
+        background-color:#232222;
+        color:#fff;
+        text-decoration:none;
+        padding:10px 12px;
+        display:block;
+      }
+
+      .nav li a:hover {
+        background-color:#434343;
+      }
+
+      .nav li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+      }
+
+      .nav li:hover > ul {
+        display:block;
+      }
+
+      .nav li ul li {
+        position:relative;
+      }
+
+      .nav li ul li ul {
+        right:-140px;
+        top:0px;
+      }
+
+    </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -33,7 +87,7 @@
     <div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top" sytle="height: 54px;">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -42,15 +96,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" >PERFIL DE USUARIO</a>
+              <a class="navbar-brand" >PERFIL ADMINISTRADOR</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="../Home/Home.htlm">Home</a></li>
-                <li class="active"><a href="#">Perfil</a></li>
-                <li><a href="MisCompras.php">Mis compras</a></li>
-                <li><a href="MisVentas.php">Mis ventas</a></li>
-                <li><a href="MisSolicitudes.php">Mis Solicitudes</a></li>
+              <ul class="nav navbar-nav" style="margin-top: 5px;">
+                <li><a href="../../Home/Home.php?codigo=1">Home</a></li>
+                <li class="active"><a href="#">Informes de ventas</a></li>
+                <li><a href="Solicitudes.php">Solicitudes</a></li>
+                <li><a href="MisSolicitudes.php">Subir Publicidad</a></li>
+                <ul class="nav" style="height: 0px;">
+                  <li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>
+                    <ul>
+                      <li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>
+                    </ul>
+                  </li>
+                </ul>
 				<!--<form class="navbar-form navbar-right">
 					<div class="form-group">
 						<input type="text" placeholder="Correo" class="form-control">
@@ -124,32 +184,22 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-lg-4">
 			    <a name="paises" id="pa"></a>
-          <img  src="../src/Img.jpg"  width="140" height="140">
-             <h1>INFORMACION DE USUARIO</h1><br/><br/>
-            <?php
-              require_once('Conexion.php');
-              //Obtener valores del formulario
-              $Cod_cliente = $_POST['txtCodcliente'];
 
-                  $sql = "SELECT * FROM clientes WHERE codcli='1'";
-                  $result = mysqli_query($Conexion,$sql);
-                    while ($fila = mysqli_fetch_assoc($result)){
-                        $info='<h3>Nombre : '.$fila['nombre'].' '.$fila['apellidos'].'</h3><br/>';
-                        $info.='<h3>Cédula : '.$fila['cedula'].'</h3><br/>';
-                        $info.='<h3>Email : '.$fila['email'].'</h3><br/>';
-                        $info.='<h3>Pais : '.$fila['pais'].'</h3><br/>';
-                        $info.='<h3>Dirección : '.$fila['dircli'].'</h3><br/>';
-                        $info.='<h3>Sexo : '.$fila['sexo'].'</h3><br/>';
-                        $info.='<h3>Teléfono : '.$fila['telefono'].'</h3><br/>';
-                        $info.='<h3>Fecha de nacimiento : '.$fila['fecha_nac'].'</h3><br/>';
-                        print $info;
-                    }
-            ?>
-        </div><!-- /.col-lg-4 -->
+             <h4 style="margin-top: 16px; margin-left: 57px;"></h4><br/><br/>
+             <ul class="nav">
+               <li><a href="" style="margin-top: -72px; margin-left: 143px;">INFORMES</a>
+                 <ul>
+                   <li><a href="Ventas.php" style="margin-left:143px;width: 220px;">Ventas</a></li>
+                   <li><a href="VentasPersonales.php" style="margin-left:143px;width: 220px;">Ventas personales</a></li>
+                   <li><a href="TOPDiscos.php" style="margin-left:143px;width: 220px;">TOP discos más vendidos</a></li>
+                   <li><a href="TOPClientes.php" style="margin-left: 143px;width: 220px;">TOP clientes</a></li>
+                 </ul>
+               </li>
+             </ul>
+
       </div><!-- /.row -->
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" style="margin-top: 216px;margin-bottom: 40px;">
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
 

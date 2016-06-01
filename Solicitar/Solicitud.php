@@ -23,7 +23,7 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="logo.png">
+        <link rel="shortcut icon" href="assets/img/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
@@ -49,7 +49,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<span class="li-social">
-                <img src="logos.png" alt="" width="" height="100"><br/>
+                <img src="assets/img/logo.png" alt="" width="" height="100"><br/>
 							</span>
 						</li>
 					</ul>
@@ -65,8 +65,17 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
 
-                            <h1><img src="credentials-preferences.png" alt="" width="" height="100" align=bottom><strong>Solicitar disco:</strong><br/></h1>
-                            <a href="../Home/Home.html" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>
+                            <h1><img src="assets/img/credentials-preferences.png" alt="" width="" height="100" align=bottom><strong>Solicitar disco:</strong><br/></h1>
+                            <?php
+                              $Cod_cliente=$_GET['codigo'];
+                              if($Cod_cliente==""){
+                                $html='<a href="../Home/Home.php" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Agregar disco</strong> </h1></a>';
+                              }else{
+                                $html='<a href="../Home/Home.php?codigo='.$Cod_cliente.'" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>';
+                              }
+                              print $html;
+                             ?>
+
                         </div>
 
                     </div>

@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../favicon.png">
+    <link rel="icon" href="../src/favicon.png">
 
     <title>MUSIC RECORDS</title>
 
@@ -26,6 +26,60 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+
+        <style type="text/css">
+
+      * {
+        margin:0px;
+        padding:0px;
+      }
+
+      #header {
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      ul, ol {
+        list-style:none;
+      }
+
+      .nav > li {
+        float:left;
+      }
+
+      .nav li a {
+        background-color:#232222;
+        color:#fff;
+        text-decoration:none;
+        padding:10px 12px;
+        display:block;
+      }
+
+      .nav li a:hover {
+        background-color:#434343;
+      }
+
+      .nav li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+      }
+
+      .nav li:hover > ul {
+        display:block;
+      }
+
+      .nav li ul li {
+        position:relative;
+      }
+
+      .nav li ul li ul {
+        right:-140px;
+        top:0px;
+      }
+
+    </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -46,14 +100,77 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="../../Home/Home.html">Home</a></li>
-                <li class="active"><a href="Catalogo.html">Catálogo</a></li>
-                <li><a href="../../Solicitar/Solicitud.html">Solicitar Disco</a></li>
-                <li><a href="../../RegistrarDisco/RegDisco.html">Venta Disco</a></li>
-				<form class="navbar-form navbar-right">
-					<button type="button" class="btn btn-success" onclick = "location='../../Login/Ingresar.html'" style="margin-left: 389px;">Ingresar</button>
-          <button type="button" class="btn btn-success" onclick = "location='../../Registrar/Registrar.html'">Registrar</button>
-				</form>
+                <?php
+                    require_once('Conexion.php');
+
+                    $Cod_cliente=$_GET['codigo'];
+                    if ($Cod_cliente==""){
+                      $html='<li><a href="../../Home/Home.php">Home</a></li>';
+                      $html.='<li class="active"><a href="CatalogoU.php">Catálogo</a></li>';
+                      $html.='<li><a href="../../Solicitar/Solicitud.php">Solicitar Disco</a></li>';
+                      $html.='<li><a href="../../RegistrarDisco/RegDisco.php">Venta Disco</a></li>';
+                      $html.='<form class="navbar-form navbar-right">';
+                      $html.='<li><a href="../../Login/Ingresar.html" class="button" style="background-color: #5cb0b8;
+                          border-radius: 4px;
+                          border: 1px solid transparent;
+                          display: inline-block;
+                          padding: 6px 12px;
+                          margin-bottom: 0;
+                          font-size: 14px;
+                          font-weight: 400;
+                          line-height: 1.42857143;
+                          text-align: center;
+                          white-space: nowrap;
+                          vertical-align: middle;
+                          touch-action: manipulation;
+                          cursor: pointer;
+                          -webkit-user-select: none;margin-left: 409px;">Ingresar</a></li>';
+                      $html.='<li style="height: 0px;"><a href="../../Registrar/Registrar.html" class="button" style="background-color: #5cb0b8;
+                          border-radius: 4px;
+                          border: 1px solid transparent;
+                          display: inline-block;
+                          padding: 6px 12px;
+                          margin-bottom: 0;
+                          font-size: 14px;
+                          font-weight: 400;
+                          line-height: 1.42857143;
+                          text-align: center;
+                          white-space: nowrap;
+                          vertical-align: middle;
+                          touch-action: manipulation;
+                          cursor: pointer;
+                          -webkit-user-select: none;margin-left: 496px; margin-top: -56px;">Registrar</a></li>';
+                      $html.='</form>';
+                      print $html;
+                    }else if ($Cod_cliente==1){
+                      $html='<li><a href="../../Home/Home.php?codigo='.$Cod_cliente.'">Home</a></li>';
+                      $html.='<li class="active"><a href="CatalogoA.php">Catálogo</a></li>';
+                      $html.='<li><a href="../../Solicitar/Solicitud.php?codigo='.$Cod_cliente.'">Solicitar Disco</a></li>';
+                      $html.='<li><a href="../../RegistrarDisco/RegDisco.php?codigo='.$Cod_cliente.'">Venta Disco</a></li>';
+                      $html.='<ul class="nav">';
+                      $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>';
+                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilU.php?codigo='.$Cod_cliente.'" style="margin-left:700px;width: 84px;">Perfil</a></li>';
+                      $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
+                      $html.='</ul></li></ul>';
+                      print $html;
+                    }else{
+                      $sql = "SELECT codcli,nombre,apellidos FROM clientes WHERE codcli=$Cod_cliente";
+                      $result = mysqli_query($Conexion,$sql);
+                      $fila = mysqli_fetch_assoc($result);
+                      $Nom_cliente=$fila['nombre'].' '.$fila['apellidos'];
+                      $html='<li><a href="../../Home/Home.php?codigo='.$Cod_cliente.'">Home</a></li>';
+                      $html.='<li class="active"><a href="CatalogoU.php?codigo='.$Cod_cliente.'">Catálogo</a></li>';
+                      $html.='<li><a href="../../Solicitar/Solicitud.php?codigo='.$Cod_cliente.'">Solicitar Disco</a></li>';
+                      $html.='<li><a href="../../RegistrarDisco/RegDisco.php?codigo='.$Cod_cliente.'">Venta Disco</a></li>';
+                      $html.='<ul class="nav">';
+                      $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como '.$Nom_cliente.'</a>';
+                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilU.php?codigo='.$Cod_cliente.'" style="margin-left:700px;width: 84px;">Perfil</a></li>';
+                      $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
+                      $html.='</ul></li></ul>';
+                      print $html;
+                    }
+                 ?>
+
               </ul>
             </div>
           </div>
@@ -151,18 +268,36 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
-        <a href="#about"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>
-        <a href="#about"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>
+        <?php
+        $Cod_cliente=$_GET['codigo'];
+          if($Cod_cliente==""){
+            $html='<a href="CatalogoU.php"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
+            $html.='<a href="CatalogoU1.php"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
+          }else {
+            $html='<a href="CatalogoU.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
+            $html.='<a href="CatalogoU1.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
+          }
+
+        ?>
+
+
         </div>
 
         <?php
         $Codigo = $_GET['Codigo'];
+        $Codigo_cliente = $_GET['codigo'];
+        $tipo = $_GET['tipo'];
         $Nombre = "";
         $Artista = "";
         $Imagen = "";
         require_once('Conexion.php');
 
-        $sql = "SELECT * FROM discos ". "WHERE codigo='".$Codigo."'";
+        if($tipo==1){
+          $sql = "SELECT * FROM discos ". "WHERE codigo='".$Codigo."'";
+        }else{
+          $sql = "SELECT * FROM discos_cli ". "WHERE codigo='".$Codigo."'";
+        }
+
 
          $rs = mysqli_query($Conexion,$sql);
 
@@ -183,7 +318,7 @@
            $Var.= '<h2>Fecha de lanzamiento :</h2><p>'.$Fecha.'</p>';
            $Var.= '<h2>Valor :</h2><p>$'.$Valor.'</p>';
            $Var.= '<h2>Género :</h2><p>'.$Genero.'</p>';
-           $Var.= '<p><a class="btn btn-default" href="Compra.php?Codigo='.$Codigo.'&Imagen='.$Imagen.'&Nombre='.$Nombre.'&Artista='.$Artista.'&Valor='.$Valor.'" role="button">Comprar&raquo;</a></p>';
+           $Var.= '<p><a class="btn btn-default" href="Compra.php?Codigo='.$Codigo.'&Imagen='.$Imagen.'&Nombre='.$Nombre.'&Artista='.$Artista.'&Valor='.$Valor.'&codigo='.$Codigo_cliente.'" role="button">Comprar&raquo;</a></p>';
            $Var.= '</div><!-- /.col-lg-4 -->';
            print $Var;
          }

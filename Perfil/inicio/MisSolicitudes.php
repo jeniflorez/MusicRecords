@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../icono.ico">
+    <link rel="icon" href="../src/favicon.png">
 
     <title>PERFIL</title>
 
@@ -26,6 +26,59 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+        <style type="text/css">
+
+      * {
+        margin:0px;
+        padding:0px;
+      }
+
+      #header {
+        margin:auto;
+        width:500px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+
+      ul, ol {
+        list-style:none;
+      }
+
+      .nav > li {
+        float:left;
+      }
+
+      .nav li a {
+        background-color:#232222;
+        color:#fff;
+        text-decoration:none;
+        padding:10px 12px;
+        display:block;
+      }
+
+      .nav li a:hover {
+        background-color:#434343;
+      }
+
+      .nav li ul {
+        display:none;
+        position:absolute;
+        min-width:140px;
+      }
+
+      .nav li:hover > ul {
+        display:block;
+      }
+
+      .nav li ul li {
+        position:relative;
+      }
+
+      .nav li ul li ul {
+        right:-140px;
+        top:0px;
+      }
+
+    </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -46,13 +99,25 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="../Home/Home.html">Home</a></li>
+
                 <?php
+                require_once('Conexion.php');
+
                   $Cod_cliente=$_GET['codigo'];
-                  $html='<li><a href="Perfil.php?codigo='.$Cod_cliente.'">Perfil</a></li>';
-                  $html='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
-                  $html='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
-                  $html='<li class="active"><a href="#">Mis Solicitudes</a></li>';
+                  $sql = "SELECT codcli,nombre,apellidos FROM clientes WHERE codcli=$Cod_cliente";
+                  $result = mysqli_query($Conexion,$sql);
+                  $fila = mysqli_fetch_assoc($result);
+                  $Nom_cliente=$fila['nombre'].' '.$fila['apellidos'];
+                  $html='<li><a href="../../Home/Home.php?codigo='.$Cod_cliente.'">Home</a></li>';
+                  $html.='<li><a href="PerfilU.php?codigo='.$Cod_cliente.'">Perfil</a></li>';
+                  $html.='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
+                  $html.='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
+                  $html.='<li class="active"><a href="#">Mis Solicitudes</a></li>';
+                  $html.='<ul class="nav">';
+                  $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como '.$Nom_cliente.'</a>';
+                  $html.='<ul>';
+                  $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
+                  $html.='</ul></li></ul>';
                   print $html;
                  ?>
 
@@ -130,7 +195,7 @@
       <!-- Three columns of text below the carousel -->
         <div class="row">
 
-            <img  src="../src/disco.png"  width="140" height="140" style="margin-left: 315px;">
+            <img  src="../src/discos8.png"  width="140" height="140" style="margin-left: 315px;">
                <center><h1 style="margin-right: 0px; margin-top: -86px;">SOLICITUDES</h1></center>
                <table class="table table-responsive" style="margin-top: -36px; margin-left: 137px;">
                <thead><tr><th>Nombre disco</th><th>Artista</th><th>Estado</th></tr></thead><tbody>
@@ -138,7 +203,7 @@
    							require_once('Conexion.php');
 
                     $Cod_cliente = $_GET['codigo'];
-                    $sql = "SELECT * FROM solicitud WHERE cod_cliente='.$Cod_cliente.'";
+                    $sql = "SELECT * FROM solicitud WHERE cod_cliente=$Cod_cliente";
                     $result = mysqli_query($Conexion,$sql);
    											while ($fila = mysqli_fetch_assoc($result)) {
                               $estadoSolicitud=$fila1['estado_sol'];

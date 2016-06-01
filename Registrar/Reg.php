@@ -24,9 +24,11 @@ $fecha .=  $Dia;
     $sql = "INSERT INTO clientes VALUES ('','$Cedula','$Nombre','$Apellidos','$Email','$Contrasenia','$Pais','$Sexo','$Telefono','$Direccion','$fecha')";
 
     $result = mysqli_query($Conexion,$sql);
-    
+
     if($result== 1){
       echo "Registro exitoso";
+      $sql = "INSERT INTO usuarios VALUES ('','$Email','$Contrasenia')";
+      $result2 = mysqli_query($Conexion,$sql);
     }else{
       echo "No se pudo registrar";
     }

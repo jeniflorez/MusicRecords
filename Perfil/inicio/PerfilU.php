@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../icono.ico">
+    <link rel="icon" href="../src/favicon.png">
 
     <title>PERFIL</title>
 
@@ -26,6 +26,59 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+          <style type="text/css">
+
+        * {
+          margin:0px;
+          padding:0px;
+        }
+
+        #header {
+          margin:auto;
+          width:500px;
+          font-family:Arial, Helvetica, sans-serif;
+        }
+
+        ul, ol {
+          list-style:none;
+        }
+
+        .nav > li {
+          float:left;
+        }
+
+        .nav li a {
+          background-color:#232222;
+          color:#fff;
+          text-decoration:none;
+          padding:10px 12px;
+          display:block;
+        }
+
+        .nav li a:hover {
+          background-color:#434343;
+        }
+
+        .nav li ul {
+          display:none;
+          position:absolute;
+          min-width:140px;
+        }
+
+        .nav li:hover > ul {
+          display:block;
+        }
+
+        .nav li ul li {
+          position:relative;
+        }
+
+        .nav li ul li ul {
+          right:-140px;
+          top:0px;
+        }
+
+      </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -46,13 +99,24 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="../Home/Home.htlm">Home</a></li>
-                <li class="active"><a href="#">Perfil</a></li>
                 <?php
+                require_once('Conexion.php');
+
                   $Cod_cliente=$_GET['codigo'];
-                  $html='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
-                  $html='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
-                  $html='<li><a href="MisSolicitudes.php?codigo='.$Cod_cliente.'">Mis Solicitudes</a></li>';
+                  $sql = "SELECT codcli,nombre,apellidos FROM clientes WHERE codcli=$Cod_cliente";
+                  $result = mysqli_query($Conexion,$sql);
+                  $fila = mysqli_fetch_assoc($result);
+                  $Nom_cliente=$fila['nombre'].' '.$fila['apellidos'];
+                  $html='<li><a href="../../Home/Home.php?codigo='.$Cod_cliente.'">Home</a></li>';
+                  $html.='<li class="active"><a href="#">Perfil</a></li>';
+                  $html.='<li><a href="MisCompras.php?codigo='.$Cod_cliente.'">Mis compras</a></li>';
+                  $html.='<li><a href="MisVentas.php?codigo='.$Cod_cliente.'">Mis ventas</a></li>';
+                  $html.='<li><a href="MisSolicitudes.php?codigo='.$Cod_cliente.'">Mis Solicitudes</a></li>';
+                  $html.='<ul class="nav">';
+                  $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como '.$Nom_cliente.'</a>';
+                  $html.='<ul>';
+                  $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
+                  $html.='</ul></li></ul>';
                   print $html;
                  ?>
 
@@ -140,8 +204,7 @@
               require_once('Conexion.php');
               //Obtener valores del formulario
               $Cod_cliente = $_GET['codigo'];
-              print '<h1>'.$Cod_cliente.'</h1>';
-                  $sql = "SELECT * FROM clientes WHERE codcli='.$Cod_cliente.'";
+                  $sql = "SELECT * FROM clientes WHERE codcli=$Cod_cliente";
                   $result = mysqli_query($Conexion,$sql);
                     while ($fila = mysqli_fetch_assoc($result)){
                         $info='<h3>Nombre : '.$fila['nombre'].' '.$fila['apellidos'].'</h3><br/>';

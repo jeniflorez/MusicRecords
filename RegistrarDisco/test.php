@@ -4,6 +4,7 @@ require_once('Conexion.php');
 
 
 //Obtener valores del formulario
+$Codigo=$_GET['codigo'];
 $NombreD = $_POST['txtNomD'];
 $NombreA = $_POST['txtNomA'];
 $Desc = $_POST['txtDes'];
@@ -19,10 +20,13 @@ $fecha .=  $Dia;
 $img = $_FILES["file-field"];
 $Imagen = uploadFiles($img,"Imagenes");
 
-    $sql = "INSERT INTO discos VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen')";
-
-    $result = mysqli_query($Conexion,$sql);
-
+    if ($Codigo==1){
+      $sql = "INSERT INTO discos VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen')";
+      $result = mysqli_query($Conexion,$sql);
+    }else{
+      $sql = "INSERT INTO discos_cli VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen')";
+      $result = mysqli_query($Conexion,$sql);
+    }
     if($result== 1){
       echo "Registro exitoso";
       /**uploadFiles($_FILES,"Imagenes");**/
@@ -34,8 +38,8 @@ $Imagen = uploadFiles($img,"Imagenes");
 
     		$file=$files['name'];
     		$ext=substr($file,strrpos($file,".")+1);
-
-    		$name=md5(date("Y-m-d H:i:s")).".".$ext;
+         
+    		$name=md5(date_default_timezone_set("Y-m-d H:i:s")).".".$ext;
 
     		$destino =  "files/".$folder."/".$name;
 
