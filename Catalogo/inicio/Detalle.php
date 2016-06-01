@@ -267,7 +267,7 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
+        <h2 style="margin-left: 468px; color: #fff;margin-bottom: 37px;">INFORMACIÓN DISCO</h2>
         <?php
         $Cod_cliente=$_GET['codigo'];
           if($Cod_cliente==""){

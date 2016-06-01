@@ -125,7 +125,7 @@
                     }else{
                       $html='<li><a href="../../Home/Home.php">Home</a></li>';
                       $html.='<li class="active"><a href="Catalogo.html">Catálogo</a></li>';
-                      $html.='<li><a href="../../Solicitar/Solicitud.php">Solicitar Disco</a></li>';
+                      $html.='<li><a href="../../Solicitar/solicitar.php?codigo=">Solicitar Disco</a></li>';
                       $html.='<li><a href="../../RegistrarDisco/RegDisco.php">Venta Disco</a></li>';
                       $html.='<form class="navbar-form navbar-right">';
                       $html.='<li><a href="../../Login/Ingresar.html" class="button" style="background-color: #5cb0b8;

@@ -69,7 +69,7 @@
                             <?php
                               $Cod_cliente=$_GET['codigo'];
                               if($Cod_cliente==""){
-                                $html='<a href="../Home/Home.php" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Agregar disco</strong> </h1></a>';
+                                $html='<a href="../Home/Home.php" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>';
                               }else{
                                 $html='<a href="../Home/Home.php?codigo='.$Cod_cliente.'" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>';
                               }

@@ -269,21 +269,8 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
-        <?php
-        $Cod_cliente=$_GET['codigo'];
-          if($Cod_cliente==""){
-            $html='<a href="CatalogoU.php"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
-            $html.='<a href="CatalogoU1.php"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
-          }else if($Cod_cliente==1){
-            $html='<a href="CatalogoA.php"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
-            $html.='<a href="CatalogoU1.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
-          }else{
-            $html='<a href="CatalogoU.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
-            $html.='<a href="CatalogoU1.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
-          }
-          print $html;
-        ?>
+        <h2 style="margin-left: 450px; color: #fff;">COMPRA</h2>
+
 
 
         <?php
@@ -291,7 +278,7 @@
         $Imagen = $_GET['Imagen'];
         $Nombre = $_GET['Nombre'];
         $Artista = $_GET['Artista'];
-        $Valor = $_GET['Valor'];     
+        $Valor = $_GET['Valor'];
         $Fecha = date_default_timezone_set('Y-m-d');
         $ValorVenta = 0;
         $Cantidad = "";

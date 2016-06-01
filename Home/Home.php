@@ -766,21 +766,32 @@ img.emoji {
 <div class="global-footer" height=500>
 	<div class = "img-footer">
 		<img src="images/catalogo.png" style " width=30px;"/><br>
-		<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoU.php">Ver catálago</a>
+    <?php
+    $Cod_cliente=$_GET['codigo'];
+    if ($Cod_cliente==""){
+      $html='<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoU.php">Ver catálago</a>';
+    }else{
+      $html='<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoU.php?codigo='.$Cod_cliente.'">Ver catálago</a>';
+    }
+
+    print $html;
+     ?>
+
 	</div>
 
 	<div class = "img-footer">
 		<img src="images/ayuda.png" width=30px/><br>
 		<a class = "footer-ancla" href="#" >Ayuda</a>
-    <div id="emailModal" class="reveal-modal small open" style="display: block; opacity: 1; visibility: visible; top: 100px; transition-property: all; transition-duration: 0s; transition-timing-function: ease;">
     </div>
-	</div>
+
 
 
 	<div class = "img-footer">
 		<img src="images/informacion.png" width=30px/><br>
 		<a class = "footer-ancla" href="index.html">Información</a>
+
 	</div>
+  	</div>
 	<!--<ul class="button-group">
 
    <li class="global-footer__social" value="Ver catalago" >
