@@ -312,13 +312,13 @@
            $Var = '<div class="col-lg-4" style = "margin-left:410px;">';
            $Var.= '<a name="paises" id="pa"></a>';
            $Var.= '<img class="img-circle" src="../../RegistrarDisco/files/Imagenes/'.$Imagen.'" alt="Generic placeholder image" width="140" height="140">';
-           $Var.= '<h2>Nombre Disco :</h2><p>'.$Nombre.'</p>';
-           $Var.= '<h2>Nombre Artista :</h2><p>'.$Artista.'</p>';
-           $Var.= '<h2>Descripción :</h2><p>'.$Descripcion.'</p>';
-           $Var.= '<h2>Fecha de lanzamiento :</h2><p>'.$Fecha.'</p>';
-           $Var.= '<h2>Valor :</h2><p>$'.$Valor.'</p>';
-           $Var.= '<h2>Género :</h2><p>'.$Genero.'</p>';
-           $Var.= '<p><a class="btn btn-default" href="Compra.php?Codigo='.$Codigo.'&Imagen='.$Imagen.'&Nombre='.$Nombre.'&Artista='.$Artista.'&Valor='.$Valor.'&codigo='.$Codigo_cliente.'" role="button">Comprar&raquo;</a></p>';
+           $Var.= '<h2 style="color: #fff;">Nombre Disco :</h2><p style="font-size: 20px;">'.$Nombre.'</p>';
+           $Var.= '<h2 style="color: #fff;">Nombre Artista :</h2><p style="font-size: 20px;">'.$Artista.'</p>';
+           $Var.= '<h2 style="color: #fff;">Descripción :</h2><p style="font-size: 20px;">'.$Descripcion.'</p>';
+           $Var.= '<h2 style="color: #fff;">Fecha de lanzamiento :</h2><p style="font-size: 20px;">'.$Fecha.'</p>';
+           $Var.= '<h2 style="color: #fff;">Valor :</h2><p style="font-size: 20px;">$'.$Valor.'</p>';
+           $Var.= '<h2 style="color: #fff;">Género :</h2><p style="font-size: 20px;">'.$Genero.'</p>';
+           $Var.= '<p><a class="btn btn-default" style ="margin-top: 16px;"href="Compra.php?Codigo='.$Codigo.'&Imagen='.$Imagen.'&Nombre='.$Nombre.'&Artista='.$Artista.'&Valor='.$Valor.'&codigo='.$Codigo_cliente.'" role="button">Comprar&raquo;</a></p>';
            $Var.= '</div><!-- /.col-lg-4 -->';
            print $Var;
          }

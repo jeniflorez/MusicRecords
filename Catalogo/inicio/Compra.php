@@ -285,10 +285,10 @@
         $Var = '<div class="col-lg-4" style = "margin-left:410px;">';
         $Var.= '<a name="paises" id="pa"></a>';
         $Var.= '<img class="img-circle" src="../../RegistrarDisco/files/Imagenes/'.$Imagen.'" alt="Generic placeholder image" width="140" height="140">';
-        $Var.= '<h2>Nombre Disco :</h2><p>'.$Nombre.'</p>';
-        $Var.= '<h2>Nombre Artista :</h2><p>'.$Artista.'</p>';
+        $Var.= '<h2 style="color: #fff;">Nombre Disco :</h2><p style="font-size: 20px;">'.$Nombre.'</p>';
+        $Var.= '<h2 style="color: #fff;">Nombre Artista :</h2><p style="font-size: 20px;">'.$Artista.'</p>';
         $Var.= '<div id= "Cantidad">';
-        $Var.= '<h2>Cantidad :</h2><select name="txtCant" required style="margin-left: 0px;height: 35px;margin-bottom: 10px;margin-top: -10px;">';
+        $Var.= '<h2 style="color: #fff;">Cantidad :</h2><select name="txtCant" required style="margin-left: 0px;height: 35px;margin-bottom: 10px;margin-top: 5px;">';
         $Var.= '<option value="1" selected="selected">1</option>';
         $Var.= '<option value="2">2</option>';
         $Var.= '<option value="3">3</option>';
@@ -302,7 +302,7 @@
         $Var.= '</select>';
         $Var.= '</div>';
         //print $ValorVenta;
-        $Var.= '<p><a class="btn btn-default" href="../../Solicitar/compra.php" role="button">Realizar Compra&raquo;</a></p>';
+        $Var.= '<p><a class="btn btn-default" style="margin-top: 25px;" href="../../Solicitar/compra.php" role="button">Realizar Compra&raquo;</a></p>';
         $Var.= '</div><!-- /.col-lg-4 -->';
         print $Var;
 
