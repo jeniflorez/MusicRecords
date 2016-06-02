@@ -770,6 +770,8 @@ img.emoji {
     $Cod_cliente=$_GET['codigo'];
     if ($Cod_cliente==""){
       $html='<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoU.php">Ver catálago</a>';
+    }else if ($Cod_cliente==1){
+      $html='<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoA.php">Ver catálago</a>';
     }else{
       $html='<a class = "footer-ancla" href="../Catalogo/inicio/CatalogoU.php?codigo='.$Cod_cliente.'">Ver catálago</a>';
     }

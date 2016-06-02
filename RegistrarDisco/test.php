@@ -99,24 +99,81 @@
                         $img = $_FILES["file-field"];
                         $Imagen = uploadFiles($img,"Imagenes");
 
+                        if($Codigo==1){
+                          $sql = "INSERT INTO discos VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen')";
+                        }else{
+                          $sql = "INSERT INTO discos_cli VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen','$Codigo')";
+                        }
 
-                              $sql = "INSERT INTO discos VALUES ('','$NombreD','$NombreA','$Desc','$fecha','$Valor','$Genero','$Imagen')";
                               $result = mysqli_query($Conexion,$sql);
 
                             if($result== 1){
-                              echo "Registro exitoso";
-                              /**uploadFiles($_FILES,"Imagenes");**/
+                              print $mensaje='<h1>Registro exitoso</h1>';
+                              if($Codigo==1){
+                                $html='<li><a href="../Catalogo/inicio/CatalogoA.php" class="button" style="background-color: #5cb0b8;
+                                    border-radius: 4px;
+                                    border: 1px solid transparent;
+                                    display: inline-block;
+                                    padding: 6px 12px;
+                                    margin-bottom: 0;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 1.42857143;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    vertical-align: middle;
+                                    touch-action: manipulation;
+                                    cursor: pointer;
+                                    -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                              }else{
+                                $html='<li><a href="../Catalogo/inicio/CatalogoU.php?codigo='.$Codigo.'" class="button" style="background-color: #5cb0b8;
+                                    border-radius: 4px;
+                                    border: 1px solid transparent;
+                                    display: inline-block;
+                                    padding: 6px 12px;
+                                    margin-bottom: 0;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 1.42857143;
+                                    text-align: center;
+                                    white-space: nowrap;
+                                    vertical-align: middle;
+                                    touch-action: manipulation;
+                                    cursor: pointer;
+                                    -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                              }
+                              print $html;
+
                             }else{
-                              echo "No se pudo registrar";
-                            }
+                              print $mensaje='<h1>No se pudo registrar</h1>';
+
+                              $html='<li><a href="../Login/Ingresar.html" class="button" style="background-color: #5cb0b8;
+                                  border-radius: 4px;
+                                  border: 1px solid transparent;
+                                  display: inline-block;
+                                  padding: 6px 12px;
+                                  margin-bottom: 0;
+                                  font-size: 14px;
+                                  font-weight: 400;
+                                  line-height: 1.42857143;
+                                  text-align: center;
+                                  white-space: nowrap;
+                                  vertical-align: middle;
+                                  touch-action: manipulation;
+                                  cursor: pointer;
+                                  -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                              print $html;
+                              }
+
+
 
                             function uploadFiles($files,$folder){
 
                             		$file=$files['name'];
                             		$ext=substr($file,strrpos($file,".")+1);
 
-                            		$name=md5(date_default_timezone_set("Y-m-d H:i:s")).".".$ext;
-                                
+                            		$name=md5(@date("Y-m-d H:i:s")).".".$ext;
+
 
                             		$destino =  "files/".$folder."/".$name;
 

@@ -269,7 +269,7 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <h2 style="margin-left: 450px; color: #fff;">COMPRA</h2>
+        <h2 style="margin-left: 540px; color: #fff;margin-bottom: 33px;">COMPRA</h2>
 
 
 

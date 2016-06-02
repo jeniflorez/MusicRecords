@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SOLICITAR DISCO</title>
+        <title>MENSAJE</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -64,33 +64,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
+                          <h1>Compra exitosa!</h1>
 
-                            <h1><img src="assets/img/credentials-preferences.png" alt="" width="" height="100" align=bottom><strong>Solicitar disco:</strong><br/></h1>
-                            <?php
-                              $Cod_cliente=$_GET['codigo'];
-                              if($Cod_cliente==""){
-                                $html='<a href="../Home/Home.php" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>';
-                              }else{
-                                $html='<a href="../Home/Home.php?codigo='.$Cod_cliente.'" ><h1 style="margin-left: 280px; color: #19b9e7;"><strong>Home</strong><strong id="reg"> >Solicitar disco</strong> </h1></a>';
-                              }
-                              print $html;
-                             ?>
-
+                          
                         </div>
 
                     </div>
-                        <div class="col-sm-5 form-box">
+                        <!--<div class="col-sm-5 form-box">
                             <div class="form-bottom">
-                              <?php
-                              $Cod_cliente=$_GET['codigo'];
-                              if($Cod_cliente==""){
-                                $html='<form name="formulario" action="solicitar.php" method="post" style="margin-left: 57px;"> </h1></a>';
-                              }else{
-                                $html='<form name="formulario" action="solicitar.php?codigo='.$Cod_cliente.'" method="post" style="margin-left: 57px;">';
-                              }
-                              print $html;
-                               ?>
-
+			                    <form name="formulario" action="solicitar.php" method="post" style="margin-left: 57px;">
                             <div class="form-group  bordes-fomulario">
                             Nombre disco<input type="text" name="txtNomDisco"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
                             </div>
@@ -98,12 +80,15 @@
                             Artista<input type="text" name="txtArtista"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
                             </div>
                             <div class="form-group  bordes-fomulario">
+                            Año<input type="text" name="txtAño"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
+                            </div>
+                            <div class="form-group  bordes-fomulario">
                             Email<input type="text" name="txtEmail"  class=" form-control"  style="width: 300px;margin-left: 184px;margin-top: -39px;margin-bottom: 30px;" required >
                             </div>
                             <button type="submit" class="btn" style="margin-left: 388px;">Solicitar</button>
 			                    </form>
 		                    </div>
-                        </div>
+                      </div>-->
                     </div>
                 </div>
             </div>

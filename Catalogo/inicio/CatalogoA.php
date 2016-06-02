@@ -245,7 +245,7 @@
            $Var.= '<img class="img-circle" src="../../RegistrarDisco/files/Imagenes/'.$Imagen.'" alt="Generic placeholder image" width="140" height="140">';
            $Var.= '<h2>'.$Nombre.'</h2>';
            $Var.= '<h2>'.$Artista.'</h2>';
-           $Var.= '<p><a class="btn btn-default" href="Detalle.php?Codigo='.$Codigo.'&codigo=1" role="button">Ver Información&raquo;</a></p>';
+           $Var.= '<p><a class="btn btn-default" href="Detalle.php?Codigo='.$Codigo.'&codigo=1&tipo=1" role="button">Ver Información&raquo;</a></p>';
            $Var.= '</div><!-- /.col-lg-4 -->';
            print $Var;
          }
