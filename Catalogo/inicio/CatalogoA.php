@@ -210,17 +210,7 @@
       <div class="row">
         <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
         <a href="CatalogoU1.php?codigo=1"><h2 style="margin-left: 488px; color: #fff; margin-top: 39px;">Discos Usuarios</h2></a>
-        <h2 style="font-size=40px;margin-left: 481px;color: #fff;width: 120px;margin-top: 86px;margin-bottom: -24px;">Géneros</h2>
-        <div id= "Genero">
-          <select name="txtGenero" required style="margin-left: 625px;height: 35px;margin-bottom: 55px;margin-top: -25px;">
-            <option value="" selected="selected">Género</option>
-            <option value='Jazz'>Jazz</option>
-            <option value='K-Pop'>K-Pop</option>
-            <option value='Pop'>Pop</option>
-            <option value='Reggaeton'>Reggaeton</option>
-            <option value='Rock'>Rock</option>
-            <option value='Salsa'>Salsa</option>
-          </select>
+      
         </div>
 
         <?php

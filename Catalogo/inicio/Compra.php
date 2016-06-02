@@ -302,7 +302,7 @@
         $Var.= '</select>';
         $Var.= '</div>';
         //print $ValorVenta;
-        $Var.= '<p><a class="btn btn-default" href="RCompra.php?Fecha='.$Fecha.'&Valor='.$Valor.'&Cantidad=txtCant.value&Codigo='.$Codigo.'" role="button">Realizar Compra&raquo;</a></p>';
+        $Var.= '<p><a class="btn btn-default" href="../../Solicitar/compra.php" role="button">Realizar Compra&raquo;</a></p>';
         $Var.= '</div><!-- /.col-lg-4 -->';
         print $Var;
 

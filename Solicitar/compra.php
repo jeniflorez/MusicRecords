@@ -15,6 +15,16 @@
 		    <link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
+        <style type="text/css">
+          .textoborde {
+          font-size:60px;
+          font-weight:bold;
+          -webkit-text-fill-color: #fff;
+          -webkit-text-stroke-color: black;
+          -webkit-text-stroke-width: 0.30px;
+          }
+        </style>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -64,9 +74,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                          <h1>Compra exitosa!</h1>
+                          <span class="textoborde">Compra exitosa!</span>
 
-                          
+
                         </div>
 
                     </div>

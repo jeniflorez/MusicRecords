@@ -19,6 +19,16 @@
 		    <link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
+        <style type="text/css">
+          .textoborde {
+            font-size:60px;
+            font-weight:bold;
+            -webkit-text-fill-color: #fff;
+            -webkit-text-stroke-color: black;
+            -webkit-text-stroke-width: 0.30px;
+          }
+      </style>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -99,8 +109,7 @@
                             $sql = "INSERT INTO usuarios VALUES ('','$Email','$Contrasenia')";
                             $result2 = mysqli_query($Conexion,$sql);
 
-                            print $mensaje='<h1 style="margin-top: -67px;
-                            margin-left: 19px;;"><strong>Registro exitoso</strong></h1>';
+                            print $mensaje='<span class="textoborde">Registro exitoso</span>';
 
                               $html='<li><a href="../Home/Home.php" class="button" style="background-color: #5cb0b8;
                                   border-radius: 4px;
@@ -122,8 +131,7 @@
 
                             print $html;
                           }else{
-                            print $mensaje='<h1 style="margin-top: -67px;
-                            margin-left: 19px;;"><strong>No se pudo registrar</strong></h1>';
+                            print $mensaje='<span class="textoborde">No se pudo registrar</span>';
 
                             $html='<li><a href="../Home/Home.php" class="button" style="background-color: #5cb0b8;
                                 border-radius: 4px;

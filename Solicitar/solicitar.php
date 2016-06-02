@@ -15,6 +15,16 @@
 		    <link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
 
+        <style type="text/css">
+          .textoborde {
+            font-size:60px;
+            font-weight:bold;
+            -webkit-text-fill-color: #fff;
+            -webkit-text-stroke-color: black;
+            -webkit-text-stroke-width: 0.30px;
+          }
+      </style>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -79,7 +89,7 @@
                           $Email_cliente = $_POST['txtEmail'];
 
                           if ($Cod_cliente==""){
-                            print $mensaje='<h1>Usted no ha ingresado sesion, por favor ingrese!</h1>';
+                            print $mensaje='<span class="textoborde">Usted no ha iniciado sesion, por favor ingrese!</span>';
 
                               $html='<li><a href="../Catalogo/inicio/CatalogoU.php" class="button" style="background-color: #5cb0b8;
                                   border-radius: 4px;
@@ -110,7 +120,7 @@
                                   $sql2 = "INSERT INTO solicitud VALUES ('','$Nombre_disco','$Artista','$Estado_sol','$Cod_cliente')";
                                   $result2 = mysqli_query($Conexion,$sql2);
                               }
-                              print $mensaje='<h1>Registro exitoso</h1>';
+                              print $mensaje='<span class="textoborde">Solicitud enviada exitosamente</span>';
 
                                 $html='<li><a href="../Catalogo/inicio/CatalogoU.php?codigo='.$Cod_cliente.'" class="button" style="background-color: #5cb0b8;
                                     border-radius: 4px;
@@ -133,7 +143,7 @@
 
                             }
                             else if($nr == 0) {
-                              print $mensaje='<h1>No estas registrado</h1>';
+                              print $mensaje='<span class="textoborde">No estas registrado</span>';
 
                               $html='<li><a href="../Solicitar/Solicitud.php" class="button" style="background-color: #5cb0b8;
                                   border-radius: 4px;
