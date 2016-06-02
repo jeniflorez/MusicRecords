@@ -268,6 +268,7 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
+        <img class="image" src="../src/h.jpg" width="800" height="140" style="margin-left:200px;">
         <h2 style="margin-left: 362px; color: #fff;">CATALOGO DISCOS USUARIOS</h2>
         <?php
           $Cod_cliente=$_GET['codigo'];
@@ -281,7 +282,7 @@
           print $html;
          ?>
 
-      
+
 
         <?php
 
@@ -314,6 +315,7 @@
 
       ?>
 
+      <img class="image" src="../src/l.jpg" width="800" height="140" style="margin-left:200px;">
 
       </div><!-- /.row -->
 

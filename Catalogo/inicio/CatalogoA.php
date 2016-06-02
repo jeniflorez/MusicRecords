@@ -206,11 +206,13 @@
 
     <div class="container marketing">
 
+
       <!-- Three columns of text below the carousel -->
       <div class="row">
+          <img class="image" src="../src/h.jpg" width="800" height="140" style="margin-left:200px;">
         <h2 style="margin-left: 450px; color: #fff;">CATALOGO DISCOS</h2>
         <a href="CatalogoU1.php?codigo=1"><h2 style="margin-left: 488px; color: #fff; margin-top: 39px;">Discos Usuarios</h2></a>
-      
+
         </div>
 
         <?php
@@ -242,6 +244,7 @@
 
       ?>
 
+      <img class="image" src="../src/l.jpg" width="800" height="140" style="margin-left:200px;">
 
       </div><!-- /.row -->
 
