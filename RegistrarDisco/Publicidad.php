@@ -116,7 +116,7 @@
                                 </div>
                               </div>
 
-			                        <button type="submit" class="btn" style="float: right;margin-top: -10px;">Agregar Publicidad</button>
+			                        <button type="submit" class="btn" style="float: right;margin-top: -10px;margin-top: -3px;margin-right: 70px;">Agregar Publicidad</button>
 
 			                    </form>
 

@@ -103,7 +103,7 @@
                                     }else{
                                       print '<a href="../Catalogo/inicio/CatalogoU.php?codigo='.$Cod_cliente.'">Enlace a página de destino</a>';
                                     }*/
-                                    print $mensaje='<h1>Ingreso exitoso</h1>';
+                                    print $mensaje='<span class="textoborde">Ingreso exitoso!</span>';
                                     if($Cod_usuario==1){
 
                                       $html='<li><a href="../Catalogo/inicio/CatalogoA.php" class="button" style="background-color: #5cb0b8;
@@ -111,7 +111,7 @@
                                           border: 1px solid transparent;
                                           display: inline-block;
                                           padding: 6px 12px;
-                                          margin-bottom: 0;
+                                          margin-bottom: -61px;
                                           font-size: 14px;
                                           font-weight: 400;
                                           line-height: 1.42857143;
@@ -127,7 +127,7 @@
                                           border: 1px solid transparent;
                                           display: inline-block;
                                           padding: 6px 12px;
-                                          margin-bottom: 0;
+                                          margin-bottom: -61px;
                                           font-size: 14px;
                                           font-weight: 400;
                                           line-height: 1.42857143;
@@ -144,14 +144,14 @@
 
                                  }
                                  else if($nr == 0) {
-                                 print $mensaje='<span class="textoborde">No estas registrado</span>';
+                                 print $mensaje='<span class="textoborde">No estás registrado!</span>';
 
                                  $html='<li><a href="../Login/Ingresar.html" class="button" style="background-color: #5cb0b8;
                                      border-radius: 4px;
                                      border: 1px solid transparent;
                                      display: inline-block;
                                      padding: 6px 12px;
-                                     margin-bottom: 0;
+                                     margin-bottom: -61px;
                                      font-size: 14px;
                                      font-weight: 400;
                                      line-height: 1.42857143;

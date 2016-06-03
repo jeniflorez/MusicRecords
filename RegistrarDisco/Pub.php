@@ -87,9 +87,45 @@ $img = $_FILES["file-field"];
     if ($Publicidad==01){
       $Imagen = uploadFiles($img,"h.jpg");
         print $mensaje='<span class="textoborde">Publicidad 1 agregada exitosamente</span>';
+        $html='<li><a href="../Catalogo/inicio/CatalogoA.php" class="button" style="background-color: #5cb0b8;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+
+
+      print $html;
     }else{
         print $mensaje='<span class="textoborde">Publicidad 2 agregada exitosamente</span>';
       $Imagen = uploadFiles($img,"l.jpg");
+      $html='<li><a href="../Catalogo/inicio/CatalogoA.php" class="button" style="background-color: #5cb0b8;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          display: inline-block;
+          padding: 6px 12px;
+          margin-bottom: 0;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.42857143;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          touch-action: manipulation;
+          cursor: pointer;
+          -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+
+
+    print $html;
     }
 
 

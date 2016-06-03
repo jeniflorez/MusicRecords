@@ -75,6 +75,25 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                           <span class="textoborde">Compra exitosa!</span>
+                          <?php
+                          $Cod_cliente=$_GET['codigo'];
+                          $html='<li><a href="../Catalogo/inicio/CatalogoU.php?codigo='.$Cod_cliente.'" class="button" style="background-color: #5cb0b8;
+                              border-radius: 4px;
+                              border: 1px solid transparent;
+                              display: inline-block;
+                              padding: 6px 12px;
+                              margin-bottom: -61px;
+                              font-size: 14px;
+                              font-weight: 400;
+                              line-height: 1.42857143;
+                              text-align: center;
+                              white-space: nowrap;
+                              vertical-align: middle;
+                              touch-action: manipulation;
+                              cursor: pointer;
+                              -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                              print $html;
+                           ?>
 
 
                         </div>

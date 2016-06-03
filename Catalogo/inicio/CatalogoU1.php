@@ -151,7 +151,7 @@
                       $html.='<li><a href="../../RegistrarDisco/RegDisco.php?codigo='.$Cod_cliente.'">Venta Disco</a></li>';
                       $html.='<ul class="nav">';
                       $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>';
-                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilU.php?codigo='.$Cod_cliente.'" style="margin-left:700px;width: 84px;">Perfil</a></li>';
+                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilA.php" style="margin-left:700px;width: 84px;">Perfil</a></li>';
                       $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
                       $html.='</ul></li></ul>';
                       print $html;

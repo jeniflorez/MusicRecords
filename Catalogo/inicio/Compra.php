@@ -149,7 +149,7 @@
                       $html.='<li><a href="../../RegistrarDisco/RegDisco.php?codigo='.$Cod_cliente.'">Venta Disco</a></li>';
                       $html.='<ul class="nav">';
                       $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>';
-                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilU.php?codigo='.$Cod_cliente.'" style="margin-left:700px;width: 84px;">Perfil</a></li>';
+                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilA.php?" style="margin-left:700px;width: 84px;">Perfil</a></li>';
                       $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
                       $html.='</ul></li></ul>';
                       print $html;
@@ -274,6 +274,7 @@
 
 
         <?php
+        $Cod_cliente=$_GET['codigo'];
         $Codigo = $_GET['Codigo'];
         $Imagen = $_GET['Imagen'];
         $Nombre = $_GET['Nombre'];
@@ -302,7 +303,7 @@
         $Var.= '</select>';
         $Var.= '</div>';
         //print $ValorVenta;
-        $Var.= '<p><a class="btn btn-default" style="margin-top: 25px;" href="../../Solicitar/compra.php" role="button">Realizar Compra&raquo;</a></p>';
+        $Var.= '<p><a class="btn btn-default" style="margin-top: 25px;" href="../../Solicitar/compra.php?codigo='.$Cod_cliente.'" role="button">Realizar Compra&raquo;</a></p>';
         $Var.= '</div><!-- /.col-lg-4 -->';
         print $Var;
 

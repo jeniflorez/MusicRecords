@@ -96,7 +96,7 @@
                                   border: 1px solid transparent;
                                   display: inline-block;
                                   padding: 6px 12px;
-                                  margin-bottom: 0;
+                                  margin-bottom: -63px;
                                   font-size: 14px;
                                   font-weight: 400;
                                   line-height: 1.42857143;
@@ -127,7 +127,7 @@
                                     border: 1px solid transparent;
                                     display: inline-block;
                                     padding: 6px 12px;
-                                    margin-bottom: 0;
+                                    margin-bottom: -63px;
                                     font-size: 14px;
                                     font-weight: 400;
                                     line-height: 1.42857143;
@@ -150,7 +150,7 @@
                                   border: 1px solid transparent;
                                   display: inline-block;
                                   padding: 6px 12px;
-                                  margin-bottom: 0;
+                                  margin-bottom: -63px;
                                   font-size: 14px;
                                   font-weight: 400;
                                   line-height: 1.42857143;

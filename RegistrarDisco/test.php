@@ -118,14 +118,14 @@
                               $result = mysqli_query($Conexion,$sql);
 
                             if($result== 1){
-                              print $mensaje='<span class="textoborde">Registro exitoso</span>';
+                              print $mensaje='<span class="textoborde" style="    margin-left: 126px;">Registro exitoso</span>';
                               if($Codigo==1){
                                 $html='<li><a href="../Catalogo/inicio/CatalogoA.php" class="button" style="background-color: #5cb0b8;
                                     border-radius: 4px;
                                     border: 1px solid transparent;
                                     display: inline-block;
                                     padding: 6px 12px;
-                                    margin-bottom: 0;
+                                    margin-bottom: -37px;
                                     font-size: 14px;
                                     font-weight: 400;
                                     line-height: 1.42857143;
@@ -134,14 +134,14 @@
                                     vertical-align: middle;
                                     touch-action: manipulation;
                                     cursor: pointer;
-                                    -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                                    -webkit-user-select: none;    margin-left: 124px;;color: #fff;">Aceptar</a></li>';
                               }else{
                                 $html='<li><a href="../Catalogo/inicio/CatalogoU.php?codigo='.$Codigo.'" class="button" style="background-color: #5cb0b8;
                                     border-radius: 4px;
                                     border: 1px solid transparent;
                                     display: inline-block;
                                     padding: 6px 12px;
-                                    margin-bottom: 0;
+                                    margin-bottom: -37px;
                                     font-size: 14px;
                                     font-weight: 400;
                                     line-height: 1.42857143;
@@ -150,19 +150,19 @@
                                     vertical-align: middle;
                                     touch-action: manipulation;
                                     cursor: pointer;
-                                    -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                                    -webkit-user-select: none;    margin-left: 124px;;color: #fff;">Aceptar</a></li>';
                               }
                               print $html;
 
                             }else{
-                              print $mensaje='<span class="textoborde">No se pudo registrar</span>';
+                              print $mensaje='<span class="textoborde" style="    margin-left: 126px;">No se pudo registrar</span>';
 
                               $html='<li><a href="../Login/Ingresar.html" class="button" style="background-color: #5cb0b8;
                                   border-radius: 4px;
                                   border: 1px solid transparent;
                                   display: inline-block;
                                   padding: 6px 12px;
-                                  margin-bottom: 0;
+                                  margin-bottom: -37px;
                                   font-size: 14px;
                                   font-weight: 400;
                                   line-height: 1.42857143;
@@ -171,7 +171,7 @@
                                   vertical-align: middle;
                                   touch-action: manipulation;
                                   cursor: pointer;
-                                  -webkit-user-select: none;margin-left: -19px;color: #fff;">Aceptar</a></li>';
+                                  -webkit-user-select: none;  margin-left: 124px;;color: #fff;">Aceptar</a></li>';
                               print $html;
                               }
 

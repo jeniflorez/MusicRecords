@@ -116,7 +116,7 @@
                                   border: 1px solid transparent;
                                   display: inline-block;
                                   padding: 6px 12px;
-                                  margin-bottom: 0;
+                                  margin-bottom: -38px;
                                   font-size: 14px;
                                   font-weight: 400;
                                   line-height: 1.42857143;
@@ -125,7 +125,7 @@
                                   vertical-align: middle;
                                   touch-action: manipulation;
                                   cursor: pointer;
-                                  -webkit-user-select: none;margin-left: 17px;
+                                  -webkit-user-select: none;margin-left: -9px;
                                   margin-top: 10px;;color: #fff;">Aceptar</a></li>';
 
 
@@ -138,7 +138,7 @@
                                 border: 1px solid transparent;
                                 display: inline-block;
                                 padding: 6px 12px;
-                                margin-bottom: 0;
+                                margin-bottom: -38px;
                                 font-size: 14px;
                                 font-weight: 400;
                                 line-height: 1.42857143;
@@ -147,7 +147,7 @@
                                 vertical-align: middle;
                                 touch-action: manipulation;
                                 cursor: pointer;
-                                -webkit-user-select: none;margin-left: 17px;
+                                -webkit-user-select: none;margin-left: -9px;
                                 margin-top: 10px;;color: #fff;">Aceptar</a></li>';
                             print $html;
                           }

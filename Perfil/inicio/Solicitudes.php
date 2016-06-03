@@ -102,7 +102,7 @@
                 <li><a href="../../Home/Home.php?codigo=1">Home</a></li>
                 <li><a href="PerfilA.php">Informes de ventas</a></li>
                 <li class="active"><a href="Solicitudes.php">Solicitudes</a></li>
-                <li><a href="MisSolicitudes.php">Subir Publicidad</a></li>
+                <li><a href="../../RegistrarDisco/Publicidad.php">Subir Publicidad</a></li>
                 <ul class="nav" style="height: 0px;">
                   <li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>
                     <ul>

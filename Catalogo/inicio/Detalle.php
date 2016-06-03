@@ -149,7 +149,7 @@
                       $html.='<li><a href="../../RegistrarDisco/RegDisco.php?codigo='.$Cod_cliente.'">Venta Disco</a></li>';
                       $html.='<ul class="nav">';
                       $html.='<li><a href="" style="margin-top: -39px; margin-left: 604px;">Ingresado como ADMINISTRADOR</a>';
-                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilU.php?codigo='.$Cod_cliente.'" style="margin-left:700px;width: 84px;">Perfil</a></li>';
+                      $html.='<ul><li><a href="../../Perfil/inicio/PerfilA.php" style="margin-left:700px;width: 84px;">Perfil</a></li>';
                       $html.='<li><a href="../../Home/Home.php" style="margin-left: 700px;width: 84px;">Salir</a></li>';
                       $html.='</ul></li></ul>';
                       print $html;
@@ -268,17 +268,7 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <h2 style="margin-left: 468px; color: #fff;margin-bottom: 37px;">INFORMACIÓN DISCO</h2>
-        <?php
-        $Cod_cliente=$_GET['codigo'];
-          if($Cod_cliente==""){
-            $html='<a href="CatalogoU.php"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
-            $html.='<a href="CatalogoU1.php"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
-          }else {
-            $html='<a href="CatalogoU.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 230px; color: #fff;">DISCOS MUSIC RECORDS</h2></a>';
-            $html.='<a href="CatalogoU1.php?codigo='.$Cod_cliente.'"><h2 style="margin-left: 650px; color: #fff; margin-top: -44px;">DISCOS USUARIOS</h2></a>';
-          }
 
-        ?>
 
 
         </div>
